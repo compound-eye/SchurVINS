@@ -1,4 +1,8 @@
 # SchurVINS
+## Comparing VINS-Fusion to CompoundEye VIO2 Method
+
+Refer to `compare_vio2_to_vins_fusion_instructions.md`.
+
 ## SchurVINS: Schur Complement-Based Lightweight Visual Inertial Navigation System
 We propose a filter-based VINS framework named SchurVINS, which guarantees both high accuracy by building a complete residual model and low computational complexity with Schur complement. Technically, we first formulate the full residual model where Gradient, Hessian and observation covariance are explicitly modeled. Then Schur complement is employed to decompose the full model into ego-motion residual model and landmark residual model. Finally, Extended Kalman Filter (EKF) update is implemented in these two models with high efficiency. Experiments on EuRoC and TUM-VI datasets show that SchurVINS notably outperforms state-of-the-art (SOTA) methods in both accuracy and computational complexity. The main contributions include:
 - An equivalent residual model is proposed to deal with hyper high-dimension observations, which consists of gradient, Hessian and the corresponding observation covariance. This method is of great generality in EKF systems.

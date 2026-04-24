@@ -1,0 +1,71 @@
+label: "CompoundEye"
+id: 0
+cameras:
+- camera:
+    label: cam0
+    id: 0
+    line-delay-nanoseconds: 0
+    image_height: 384
+    image_width: 1280
+    type: pinhole
+    intrinsics:
+      cols: 1
+      rows: 4
+      data: [432.093017578125, 432.093017578125, 677.8211263020833, 247.958251953125]
+    distortion:
+      type: radial-tangential
+      parameters:
+        cols: 1
+        rows: 4
+        data: [0, 0, 0, 0]
+  T_B_C:
+    cols: 4
+    rows: 4
+    data: [0.9999634266916833, -0.0033032128287271796, 0.0078888569536335, 0.0,
+           -0.003286182276669148, -0.9999922442896045, -0.0021707986282675875, 0.0,
+           0.007895966379821094, 0.002144795013075854, -0.9999665262243935, -0.015,
+           0.0, 0.0, 0.0, 1.0]
+- camera:
+    label: cam1
+    id: 0
+    line-delay-nanoseconds: 0
+    image_height: 384
+    image_width: 1280
+    type: pinhole
+    intrinsics:
+      cols: 1
+      rows: 4
+      data: [432.093017578125, 432.093017578125, 677.8211263020833, 247.958251953125]
+    distortion:
+      type: radial-tangential
+      parameters:
+        cols: 1
+        rows: 4
+        data: [0, 0, 0, 0]
+  T_B_C:
+    cols: 4
+    rows: 4
+    data: [0.9999634266916833, -0.0033032128287271796, 0.0078888569536335, 0.7804714492878418,
+           -0.003286182276669148, -0.9999922442896045, -0.0021707986282675875, -0.002564865249703558,
+           0.007895966379821094, 0.002144795013075854, -0.9999665262243935, -0.008837198281965629,
+           0.0, 0.0, 0.0, 1.0]
+
+imu_params:
+  delay_imu_cam: 0.0
+  max_imu_delta_t: 0.01
+  acc_max: 176.0
+  omega_max: 17
+  sigma_omega_c: 0.0001
+  sigma_acc_c: 0.002
+  sigma_omega_bias_c: 1.0e-05
+  sigma_acc_bias_c: 0.0002
+  sigma_integration: 0.0
+  g: 9.81007
+  imu_rate: 802
+imu_initialization:
+  velocity: [0.0, 0.0, 0.0]
+  omega_bias: [0.0, 0.0, 0.0]
+  acc_bias: [0.0, 0.0, 0.0]
+  velocity_sigma: 2.0
+  omega_bias_sigma: 0.01
+  acc_bias_sigma: 0.1

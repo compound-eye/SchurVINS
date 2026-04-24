@@ -172,7 +172,7 @@ Visualizer::Visualizer(const std::string& trace_dir,
 {
   // Init traj saver
   const auto logs_dir = boost::filesystem::path(trace_dir).parent_path().parent_path() / "logs";
-  CHECK(boost::filesystem::exists(logs_dir));
+  boost::filesystem::create_directories(logs_dir);
   traj_path_ = (logs_dir / ("imu_traj.txt")).string();
   std::cout << "traj_path: " << traj_path_;
   save_traj_.open(traj_path_);

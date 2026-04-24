@@ -68,6 +68,13 @@ void FrameHandlerStereo::addImages(
 
 UpdateResult FrameHandlerStereo::processFirstFrame()
 {
+  // Skip initialization until IMU data is available. SchurVINS requires IMU
+  // measurements spanning the frame timestamp for both forward and backward passes.
+  if(schur_vins_ && imu_handler_ && !new_frames_->imu_ready_)
+  {
+    LOG(WARNING) << "processFirstFrame: IMU not ready, waiting for next frame";
+    return UpdateResult::kDefault;
+  }
   schurvinsForward();
   if(initializer_->addFrameBundle(new_frames_) == InitResult::kFailure)
   {
